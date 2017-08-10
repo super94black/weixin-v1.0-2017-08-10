@@ -1,0 +1,71 @@
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//            request.setCharacterEncoding("utf-8");
+//            response.setCharacterEncoding("utf-8");
+//            //从request请求中获取输入流
+////          InputStream inputStream = request.getInputStream();
+////          MessageService msgService = new MessageService();
+////          String msg = msgService.replyMessage(inputStream);
+//            String respXml = CoreService.ProcessRequset(request);
+//            response.getWriter().println(respXml);
+//
+//    }
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//
+//        try {
+//            InputStream inputStream = req.getInputStream();
+//            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+//            DocumentBuilder builder = null;
+//            builder = factory.newDocumentBuilder();
+//            Document document = builder.parse(inputStream);
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+//            StringBuffer sb = new StringBuffer();
+//            String line = null;
+//            while((line = reader.readLine()) != null){
+//                sb.append(line);
+//            }
+//            String msg = sb.toString();
+            //进行消息处理业务
+
+//           String res = msgService.replyMessage(builder.toString());
+            //解析XML 根据Context来回复内容
+
+//            //获取根节点元素
+//            Element rootNode = document.getDocumentElement();
+//            //获取根节点下的子节点
+//            String rootName = rootNode.getNodeName();
+//            NodeList childNodes = rootNode.getChildNodes();
+//            Map<String, String> map = new HashMap<String, String>();
+//            for (int i = 0; i < childNodes.getLength(); i++) {
+//                Node node = childNodes.item(i);
+//                String nodeName = node.getNodeName();
+//                String nodeValue = node.getTextContent();
+//                if (node.equals("#text")) {
+//                    continue;
+//                }
+//                map.put(nodeName, nodeValue);
+//            }
+//            String Content = map.get("Content");
+//            if (Content.equals("1")) {
+//                String toUserName = map.get("FromUserName");
+//                String fromUserName = map.get("ToUserName");
+//                long time = Long.parseLong(map.get("CreateTime"));
+//                time = time + 2;
+//                String createTime = time + "";
+//                //                createTime = System.currentTimeMillis() / 1000 + "";
+//                String msgType = "text";
+//                String content = "hello";
+//                String result = "<xml><ToUserName><![CDATA[%s]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content></xml>";
+//                String res = String.format(result, toUserName, fromUserName, createTime, msgType, content);
+//                resp.getWriter().println(res);
+//                System.out.println(document.toString());
+////                --
+//                System.out.println(res);
+//            } else {
+//            }
+//        } catch (ParserConfigurationException e) {
+//            e.printStackTrace();
+//        } catch (SAXException e) {
+//            System.out.println("SAXe");
+//            e.printStackTrace();
+//        }
+//    }
